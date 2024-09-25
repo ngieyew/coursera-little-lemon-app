@@ -1,0 +1,66 @@
+.button {
+  padding: var(--button-padding, var(--spacing-unit));
+  border: none;
+  border-radius: var(--button-border-radius, var(--border-radius));
+  font-family: var(--font-family-base);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: inherit;
+}
+
+.primary {
+  background-color: var(--color-primary);
+}
+
+.primary:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 80%,
+    var(--color-text)
+  );
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+}
+
+.secondary:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-secondary) 80%,
+    var(--color-text)
+  );
+}
+
+.link {
+  background-color: transparent;
+  border: none;
+}
+
+.link:hover {
+  border: none;
+  text-decoration: underline;
+}
+
+.ghost {
+  background-color: transparent;
+  border-color: var(--color-primary);
+}
+
+.ghost:hover {
+  background-color: var(--color-primary);
+}
+
+/* Dark mode styles for ghost button */
+[data-theme="dark"] .ghost {
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .ghost:hover {
+  background-color: var(--color-primary);
+}

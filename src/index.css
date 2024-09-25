@@ -1,13 +1,145 @@
-body {
+@import "./fonts.css";
+
+/* Root Variables */
+:root {
+  /* Breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  /* Light theme (default) */
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-primary: #f4ce14;
+  --color-secondary: #ee9972;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+  --color-light: #f8f9fa;
+  --color-dark: #343a40;
+  --color-text-dark: #333333;
+  --color-bg-main: #495e57;
+  --color-text-black: #495e57;
+  --color-text-white: #edefee;
+  --color-bg-white: #edefee;
+  --color-bg-gray: #d9d9d9;
+
+  --color-text-on-primary: #000000;
+  --color-text-on-secondary: #000000;
+
+  /* Typography */
+  --font-family-primary: "Karla", "Inter", sans-serif;
+  --font-family-secondary: "Markazi", "Inter", serif;
+  --font-family-monospace: "Roboto Mono", source-code-pro, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+
+  /* Border radius */
+  --border-radius: 16px;
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --color-bg: #1a1a1a;
+  --color-text: #ffffff;
+  --color-primary: #4dabf7;
+  --color-secondary: #868e96;
+
+  --color-text-on-primary: black;
+  --color-text-on-secondary: black;
+}
+
+[data-project="Little Lemon Restaurant"] {
+  --border-radius: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  /* line-height: var(--line-height-base); */
+  background-color: var(--color-bg);
+  /* color: var(--color-text); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Button base styles */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--color-primary), 10%);
+}
+
+/* Add more button variants as needed */
+
+/* Other global styles... */

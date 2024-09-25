@@ -1,0 +1,132 @@
+.highlightSection {
+  .highlightContainer {
+    max-width: var(--breakpoint-lg);
+    margin: auto;
+    padding: 5rem 2rem 5rem 2rem;
+
+    @media (min-width: 992px) {
+      padding: 5rem 0rem 5rem 0rem;
+    }
+
+    .headerContainer {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 4rem 0;
+      gap: 4rem;
+
+      @media (min-width: 992px) {
+        padding: 4rem 0 4rem 0;
+      }
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .h1 {
+        font-size: 4rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.specialMenuGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .specialMenuItem {
+    width: 30rem;
+
+    @media (min-width: 768px) {
+      width: 25vw;
+    }
+
+    @media (min-width: 992px) {
+      width: 30rem;
+    }
+
+    .specialMenuImageWrapper {
+      width: 30rem;
+      height: 20rem;
+      overflow: hidden; /* Hide the overflow */
+      position: relative;
+
+      @media (min-width: 768px) {
+        width: 25vw;
+        height: 25vw;
+      }
+
+      @media (min-width: 992px) {
+        width: 30rem;
+        height: 20rem;
+      }
+
+      .specialMenuImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        object-position: bottom;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+    }
+
+    .specialMenuDetails {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+      padding: 2rem 2rem 2rem 2rem;
+      align-items: stretch;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+      background-color: var(--color-bg-white);
+
+      .specialMenuName {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        font-family: var(--font-family-secondary);
+        font-size: 2.4rem;
+        font-weight: 500;
+      }
+
+      .specialMenuPrice {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        color: var(--color-secondary);
+        font-weight: 700;
+      }
+
+      .specialMenuDescription {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        overflow: auto;
+        height: 100%;
+        color: var(--color-text-black);
+      }
+
+      .specialMenuActions {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        display: flex;
+        font-weight: 700;
+        color: var(--color-text-dark);
+
+        .buttonIcon {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
