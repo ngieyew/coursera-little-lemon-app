@@ -3,3 +3,8 @@
   max-width: 200px;
   gap: 20px;
 }
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}

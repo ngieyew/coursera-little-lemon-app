@@ -1,21 +1,39 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import BookingForm from "../BookingForm/BookingForm";
 import styles from "./ReservationSection.module.css";
 
+const initialState = {
+  availableTimes: initializeTimes(),
+};
+
+function initializeTimes(date = new Date()) {
+  return window.fetchAPI(new Date(date));
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "UPDATE_TIMES":
+      return { ...state, availableTimes: action.payload };
+    default:
+      return state;
+  }
+}
+
 function ReservationSection() {
-  const [timeSlots, setTimeSlots] = useState([
-    { isAvailable: false, time: "17:00" },
-    { isAvailable: true, time: "18:00" },
-    { isAvailable: false, time: "19:00" },
-    { isAvailable: false, time: "20:00" },
-    { isAvailable: true, time: "21:00" },
-    { isAvailable: true, time: "22:00" },
-  ]);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const updateTimes = (selectedDate) => {
+    // For now, return the same available times regardless of the date
+    dispatch({ type: "UPDATE_TIMES", payload: initializeTimes(selectedDate) });
+  };
 
   return (
     <section className={styles.reservationSection}>
       <div className={styles.reservationContainer}>
-        <BookingForm timeSlots={timeSlots} />
+        <BookingForm
+          availableTimes={state.availableTimes}
+          updateTimes={updateTimes}
+        />
       </div>
     </section>
   );
