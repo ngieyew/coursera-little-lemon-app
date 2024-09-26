@@ -23,6 +23,10 @@
   margin-left: var(--spacing-unit);
 }
 
+.menuItem a {
+  color: var(--color-text-dark);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

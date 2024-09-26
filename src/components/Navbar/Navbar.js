@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Menu", href: "/menu" },
-  { label: "Reservations", href: "/reservations" },
+  { label: "Reservations", href: "/reservation" },
   { label: "Order Online", href: "/order-online" },
   { label: "Login", href: "/login" },
 ];
@@ -76,7 +77,7 @@ function Navbar() {
                     closeMenu();
                   }}
                 >
-                  {item.label}
+                  <Link to={item.href}>{item.label}</Link>
                 </Button>
               </li>
             ))}

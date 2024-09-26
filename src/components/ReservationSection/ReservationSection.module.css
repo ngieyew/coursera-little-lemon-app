@@ -1,0 +1,12 @@
+.reservationSection {
+  display: flex;
+  .reservationContainer {
+    max-width: var(--breakpoint-lg);
+    margin: auto;
+    padding: 5rem 0 5rem 0;
+
+    @media (min-width: 992px) {
+      padding: 15rem 0 15rem 0;
+    }
+  }
+}
