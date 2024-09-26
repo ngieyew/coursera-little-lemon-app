@@ -1,7 +1,13 @@
 import Button from "../Button/Button";
 import styles from "./HeroSection.module.css";
+import { useNavigate } from "react-router-dom";
 
 function HeroSection() {
+  const navigate = useNavigate();
+  const redirectToReservations = () => {
+    navigate("/reservation");
+  };
+
   return (
     <section className={styles.heroSeciton}>
       <div className={styles.heroContainer}>
@@ -16,7 +22,12 @@ function HeroSection() {
             </p>
           </div>
           <div>
-            <Button padding="15px 25px 15px 25px">Reserve a table</Button>
+            <Button
+              padding="15px 25px 15px 25px"
+              onClick={redirectToReservations}
+            >
+              Reserve a table
+            </Button>
           </div>
         </div>
         <div className={styles.rightContent}>
